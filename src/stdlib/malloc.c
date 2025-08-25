@@ -19,6 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#include <errno.h>
 #include <stdlib.h>
 #include <types/size_t.h>
 #include "alloc.h"
@@ -40,8 +41,10 @@ void* malloc(size_t size){
         split_block(block, size);
     }else{
         block = create_block(size);
-        if(!block)
+        if(!block){
+            errno = ENOMEM;
             return NULL;
+        }
     }
 
     use_block(block);
