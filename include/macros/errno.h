@@ -27,7 +27,7 @@ extern "C"{
 #endif /* defined(__cplusplus) */
 
 
-int* __errno();
+int* __errno(void);
 
 
 #if defined(__cplusplus)
