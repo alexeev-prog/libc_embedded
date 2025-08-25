@@ -35,7 +35,7 @@ ssize_t _read(int fd, void *buf, size_t size){
         : "rcx", "r8", "r9", "r10", "r11", "memory", "cc");
 
     if(ret <= -125){
-        errno = -(ret);
+        errno = (int)(-ret);
         ret = -1;
     }
     return ret;
