@@ -21,13 +21,14 @@
  */
 #include <string.h>
 
-__attribute__((pure)) int strncmp(const char* s1, const char* s2, size_t n){
+__attribute__((pure)) int strncmp(const char* s1, const char* s2, size_t n) {
     const unsigned char* l = (const unsigned char*)s1;
     const unsigned char* r = (const unsigned char*)s2;
 
-    while(n--){
-        if((*l != *r) || (!*l))
-            return ( *l > *r ) - ( *r  > *l );
+    while (n--) {
+        if ((*l != *r) || (!*l)) {
+            return (*l > *r) - (*r > *l);
+        }
         l++;
         r++;
     }

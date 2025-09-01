@@ -22,20 +22,21 @@
 #include <stdio.h>
 #include <syscall.h>
 
-int fputc(int c, FILE *stream){
-    if(stream->flags & __EOF)
+int fputc(int c, FILE* stream) {
+    if (stream->flags & __EOF) {
         return EOF;
+    }
 
-    if(stream->buf.p){
+    if (stream->buf.p) {
         stream->buf.p[stream->buf.pos++] = (char)c;
-        if((stream->buf.pos == stream->buf.len) ||
-           ((stream->flags & __IOLBF) && (((char)c) == '\n')))
+        if ((stream->buf.pos == stream->buf.len) || ((stream->flags & __IOLBF) && (((char)c) == '\n'))) {
             fflush(stream);
-    }else{
+        }
+    } else {
         stream->nbuf[0] = (char)c;
         size_t ret = (size_t)_write(stream->fd, stream->nbuf, 1);
         stream->nbuf[0] = 0;
-        if(ret != 1){
+        if (ret != 1) {
             stream->flags |= __ERR;
             return EOF;
         }

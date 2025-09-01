@@ -22,48 +22,47 @@
 #ifndef __MATH_H__
 #define __MATH_H__
 
-#include <types/float_t.h>
-#include <types/double_t.h>
-
-#include <macros/HUGE_VAL.h>
-#include <macros/HUGE_VALF.h>
-#include <macros/HUGE_VALL.h>
-#include <macros/INFINITY.h>
-#include <macros/NAN.h>
 #include <macros/FP.h>
 #include <macros/FP_FAST_FMA.h>
 #include <macros/FP_FAST_FMAF.h>
 #include <macros/FP_FAST_FMAL.h>
 #include <macros/FP_ILOGB0.h>
 #include <macros/FP_ILOGBNAN.h>
-#include <macros/MATH_ERRNO.h>
+#include <macros/HUGE_VAL.h>
+#include <macros/HUGE_VALF.h>
+#include <macros/HUGE_VALL.h>
+#include <macros/INFINITY.h>
 #include <macros/MATH_ERREXCEPT.h>
+#include <macros/MATH_ERRNO.h>
+#include <macros/NAN.h>
 #include <macros/math_errhandling.h>
+#include <types/double_t.h>
+#include <types/float_t.h>
 
 // 7.12.3 Classification macros
 #if !defined(__cplusplus)
-# define fpclassify(x)        __builtin_fpclassify(x)
-# define isfinite(x)          __builtin_isfinite(x)
-# define isinf(x)             __builtin_isinf(x)
-# define isnan(x)             __builtin_isnan(x)
-# define isnormal(x)          __builtin_isnormal(x)
-# define signbit(x)           __builtin_signbit(x)
+#    define fpclassify(x) __builtin_fpclassify(x)
+#    define isfinite(x) __builtin_isfinite(x)
+#    define isinf(x) __builtin_isinf(x)
+#    define isnan(x) __builtin_isnan(x)
+#    define isnormal(x) __builtin_isnormal(x)
+#    define signbit(x) __builtin_signbit(x)
 #endif /* !defined(__cplusplus) */
 
 // 7.12.14 Comparison macros
 #if !defined(__cplusplus)
-# define isgreater(x, y)       __builtin_isgreater(x, y)
-# define isgreaterequal(x, y)  __builtin_isgreaterequal(x, y)
-# define isless(x, y)          __builtin_isless(x, y)
-# define islessequal(x, y)     __builtin_islessequal(x, y)
-# define islessgreater(x, y)   __builtin_islessgreater(x, y)
-# define isunordered(x, y)     __builtin_isunordered(x, y)
+#    define isgreater(x, y) __builtin_isgreater(x, y)
+#    define isgreaterequal(x, y) __builtin_isgreaterequal(x, y)
+#    define isless(x, y) __builtin_isless(x, y)
+#    define islessequal(x, y) __builtin_islessequal(x, y)
+#    define islessgreater(x, y) __builtin_islessgreater(x, y)
+#    define isunordered(x, y) __builtin_isunordered(x, y)
 #endif /* !defined(__cplusplus) */
 
 #if defined(__cplusplus)
-extern "C"{
+extern "C"
+{
 #endif /* defined(__cplusplus) */
-
 
 // 7.12.4 Trigonometric functions
 double acos(double x);
@@ -94,7 +93,6 @@ double tan(double x);
 float tanf(float x);
 long double tanl(long double x);
 
-
 // 7.12.5 Hyperbolic functions
 double acosh(double x);
 float acoshf(float x);
@@ -120,7 +118,6 @@ double tanh(double x);
 float tanhf(float x);
 long double tanhl(long double x);
 
-
 // 7.12.6 Exponential and logarithmic functions
 double exp(double x);
 float expf(float x);
@@ -134,9 +131,9 @@ double expm1(double x);
 float expm1f(float x);
 long double expm1l(long double x);
 
-double frexp(double value, int *exp);
-float frexpf(float value, int *exp);
-long double frexpl(long double value, int *exp);
+double frexp(double value, int* exp);
+float frexpf(float value, int* exp);
+long double frexpl(long double value, int* exp);
 
 int ilogb(double x);
 int ilogbf(float x);
@@ -166,9 +163,9 @@ double logb(double x);
 float logbf(float x);
 long double logbl(long double x);
 
-double modf(double value, double *iptr);
-float modff(float value, float *iptr);
-long double modfl(long double value, long double *iptr);
+double modf(double value, double* iptr);
+float modff(float value, float* iptr);
+long double modfl(long double value, long double* iptr);
 
 double scalbn(double x, int n);
 float scalbnf(float x, int n);
@@ -176,7 +173,6 @@ long double scalbnl(long double x, int n);
 double scalbln(double x, long int n);
 float scalblnf(float x, long int n);
 long double scalblnl(long double x, long int n);
-
 
 // 7.12.7 Power and absolute-value functions
 double cbrt(double x);
@@ -199,7 +195,6 @@ double sqrt(double x);
 float sqrtf(float x);
 long double sqrtl(long double x);
 
-
 // 7.12.8 Error and gamma functions
 double erf(double x);
 float erff(float x);
@@ -216,7 +211,6 @@ long double lgammal(long double x);
 double tgamma(double x);
 float tgammaf(float x);
 long double tgammal(long double x);
-
 
 // 7.12.9 Nearest integer functions
 double ceil(double x);
@@ -257,7 +251,6 @@ double trunc(double x);
 float truncf(float x);
 long double truncl(long double x);
 
-
 // 7.12.10 Remainder functions
 double fmod(double x, double y);
 float fmodf(float x, float y);
@@ -267,19 +260,18 @@ double remainder(double x, double y);
 float remainderf(float x, float y);
 long double remainderl(long double x, long double y);
 
-double remquo(double x, double y, int *quo);
-float remquof(float x, float y, int *quo);
-long double remquol(long double x, long double y, int *quo);
-
+double remquo(double x, double y, int* quo);
+float remquof(float x, float y, int* quo);
+long double remquol(long double x, long double y, int* quo);
 
 // 7.12.11 Manipulation functions
 double copysign(double x, double y);
 float copysignf(float x, float y);
 long double copysignl(long double x, long double y);
 
-double nan(const char *tagp);
-float nanf(const char *tagp);
-long double nanl(const char *tagp);
+double nan(const char* tagp);
+float nanf(const char* tagp);
+long double nanl(const char* tagp);
 
 double nextafter(double x, double y);
 float nextafterf(float x, float y);
@@ -288,7 +280,6 @@ long double nextafterl(long double x, long double y);
 double nexttoward(double x, long double y);
 float nexttowardf(float x, long double y);
 long double nexttowardl(long double x, long double y);
-
 
 // 7.12.12 Maximum, minimum, and positive difference functions
 double fdim(double x, double y);
@@ -303,12 +294,10 @@ double fmin(double x, double y);
 float fminf(float x, float y);
 long double fminl(long double x, long double y);
 
-
 // 7.12.13 Floating multiply-add
 double fma(double x, double y, double z);
 float fmaf(float x, float y, float z);
 long double fmal(long double x, long double y, long double z);
-
 
 #if defined(__cplusplus)
 }

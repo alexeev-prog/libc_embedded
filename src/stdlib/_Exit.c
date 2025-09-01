@@ -23,7 +23,7 @@
 #include <stdnoreturn.h>
 #include <syscall.h>
 
-_Noreturn void _Exit(int status){
+_Noreturn void _Exit(int status) {
     _exit(status);
     __builtin_unreachable();
 }

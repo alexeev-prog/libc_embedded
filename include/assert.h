@@ -25,23 +25,21 @@
 #include <stdnoreturn.h>
 
 #if defined(NDEBUG)
-# define assert(ignore) ((void)0)
+#    define assert(ignore) ((void)0)
 #else
-# define assert(a) (a ? : __assert(#a, __FILE__, __LINE__, __PRETTY_FUNCTION__))
+#    define assert(a) (a ?: __assert(#a, __FILE__, __LINE__, __PRETTY_FUNCTION__))
 #endif /* defined(NDEBUG) */
 
 #if !defined(__cplusplus)
-#define static_assert _Static_assert
+#    define static_assert _Static_assert
 #endif /* !defined(__cplusplus) */
 
 #if defined(__cplusplus)
-extern "C"{
+extern "C"
+{
 #endif /* defined(__cplusplus) */
 
-
-_Noreturn void __assert(const char* expr, const char* file,
-                       const char* line, const char* func);
-
+_Noreturn void __assert(const char* expr, const char* file, const char* line, const char* func);
 
 #if defined(__cplusplus)
 }

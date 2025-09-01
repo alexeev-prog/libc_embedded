@@ -23,7 +23,7 @@
 #define __TYPE_VA_LIST_H__
 
 #if !defined(__VA_LIST_DEFINED__)
-# define __VA_LIST_DEFINED__
+#    define __VA_LIST_DEFINED__
 typedef __builtin_va_list va_list;
 #endif /* !defined(__VA_LIST_DEFINED__) */
 

@@ -21,9 +21,9 @@
  */
 #include <errno.h>
 #include <stdlib.h>
-
 #include <syscall.h>
 
-__attribute__((weak)) void _exit(int){
-    for(;;);
+__attribute__((weak)) void _exit(int) {
+    for (;;)
+        ;
 }

@@ -19,9 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include <stdlib.h>
 #include <macros/NULL.h>
+#include <stdlib.h>
 
-int atoi(const char* nptr){
+int atoi(const char* nptr) {
     return (int)strtol(nptr, NULL, 10);
 }

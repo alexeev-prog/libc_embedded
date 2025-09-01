@@ -22,14 +22,15 @@
 #include <stdlib.h>
 #include <stdnoreturn.h>
 
-extern void(*__atexit_functions[32])(void);
+extern void (*__atexit_functions[32])(void);
 extern unsigned int __atexit_function_count;
 
 extern void __libc_fini(void);
 
-_Noreturn void exit(int status){
-    for(; __atexit_function_count;)
+_Noreturn void exit(int status) {
+    for (; __atexit_function_count;) {
         __atexit_functions[--__atexit_function_count]();
+    }
 
     __libc_fini();
 

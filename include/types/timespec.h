@@ -25,10 +25,11 @@
 #include <types/time_t.h>
 
 #if !defined(__STRUCT_TIMESPEC_DEFINED__)
-# define __STRUCT_TIMESPEC_DEFINED__
-struct timespec{
-    time_t tv_sec;  // whole seconds - > 0
-    long   tv_nsec; // nanoseconds - [0, 999999999]
+#    define __STRUCT_TIMESPEC_DEFINED__
+
+struct timespec {
+    time_t tv_sec;    // whole seconds - > 0
+    long tv_nsec;    // nanoseconds - [0, 999999999]
 };
 #endif /* !defined(__STRUCT_TIMESPEC_DEFINED__) */
 

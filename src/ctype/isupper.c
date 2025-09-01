@@ -29,6 +29,6 @@
  * isdigit, ispunct, or isspace is true. In the "C" locale, isupper returns
  * true only for the uppercase letters (as defined in 5.2.1).
  */
-int isupper(int c){
+int isupper(int c) {
     return ((c >= 'A') && (c <= 'Z'));
 }

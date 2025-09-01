@@ -23,11 +23,12 @@
 #define __TYPE_LDIV_T_H__
 
 #if !defined(__LDIV_T_DEFINED__)
-# define __LDIV_T_DEFINED__
-typedef struct{
+#    define __LDIV_T_DEFINED__
+
+typedef struct {
     long int quot;
     long int rem;
-}ldiv_t;
+} ldiv_t;
 #endif /* !defined(__LDIV_T_DEFINED__) */
 
 #endif /* __TYPE_LDIV_T_H__ */

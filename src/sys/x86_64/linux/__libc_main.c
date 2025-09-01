@@ -25,36 +25,39 @@
 extern void __libc_init(void);
 extern int main(int argc, char** argv, char** envp);
 
-noreturn void __libc_main(int argc, char** argv, char** envp){
+noreturn void __libc_main(int argc, char** argv, char** envp) {
     {
-        extern void (*__preinit_array_start [])(int, char**, char**);
-        extern void (*__preinit_array_end [])(int, char**, char**);
+        extern void (*__preinit_array_start[])(int, char**, char**);
+        extern void (*__preinit_array_end[])(int, char**, char**);
 
         size_t count = (size_t)(__preinit_array_end - __preinit_array_start);
-        for(size_t i = 0; i < count; i++)
+        for (size_t i = 0; i < count; i++) {
             __preinit_array_start[i](argc, argv, envp);
+        }
     }
 
     __libc_init();
 
     {
-        extern void (*__init_array_start [])(int, char**, char**);
-        extern void (*__init_array_end [])(int, char**, char**);
+        extern void (*__init_array_start[])(int, char**, char**);
+        extern void (*__init_array_end[])(int, char**, char**);
 
         size_t count = (size_t)(__init_array_end - __init_array_start);
-        for(size_t i = 0; i < count; i++)
+        for (size_t i = 0; i < count; i++) {
             __init_array_start[i](argc, argv, envp);
+        }
     }
 
     int ret = main(argc, argv, envp);
 
     {
-        extern void (*__fini_array_start [])(void);
-        extern void (*__fini_array_end [])(void);
+        extern void (*__fini_array_start[])(void);
+        extern void (*__fini_array_end[])(void);
 
         size_t count = (size_t)(__fini_array_end - __fini_array_start);
-        for(size_t i = count; i > 0; i--)
+        for (size_t i = count; i > 0; i--) {
             __fini_array_start[i - 1]();
+        }
     }
 
     exit(ret);

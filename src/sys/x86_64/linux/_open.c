@@ -20,20 +20,18 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <errno.h>
-
 #include <syscall.h>
 #include <types/mode_t.h>
 
-int _open(const char* filename, int flags, mode_t mode){
+int _open(const char* filename, int flags, mode_t mode) {
     int ret;
 
-    __asm volatile(
-        "syscall"
-        : "=a" (ret)
-        : "0"(__NR_open), "D"(filename), "S"(flags), "d"(mode)
-        : "rcx", "r8", "r9", "r10", "r11", "memory", "cc");
+    __asm volatile("syscall"
+                   : "=a"(ret)
+                   : "0"(__NR_open), "D"(filename), "S"(flags), "d"(mode)
+                   : "rcx", "r8", "r9", "r10", "r11", "memory", "cc");
 
-    if(ret <= -125){
+    if (ret <= -125) {
         errno = -(ret);
         ret = -1;
     }

@@ -21,6 +21,6 @@
  */
 #include <stdio.h>
 
-void setbuf(FILE* __restrict__ stream, char* __restrict__ buf){
+void setbuf(FILE* __restrict__ stream, char* __restrict__ buf) {
     setvbuf(stream, buf, buf ? _IOFBF : _IONBF, BUFSIZ);
 }

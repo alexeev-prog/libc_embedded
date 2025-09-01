@@ -21,44 +21,43 @@
  */
 #include <errno.h>
 #include <stdio.h>
-
 #include <syscall.h>
 
-static int fopen_flags(const char* mstr, int* mode){
+static int fopen_flags(const char* mstr, int* mode) {
     int flags = 0;
 
-    switch(mstr[0]){
-    case 'r':
-        flags |= __READ;
-        *mode |= O_RDONLY;
-        break;
-    case 'w':
-        flags |= __WRITE;
-        *mode |= O_WRONLY | O_CREAT | O_TRUNC;
-        break;
-    case 'a':
-        flags |= __WRITE | __APPEND;
-        *mode |= O_WRONLY | O_CREAT | O_APPEND;
-        break;
-    default:
-        errno = EINVAL;
-        return 0;
-    }
-
-    while(*++mstr){
-        switch(*mstr){
-        case '+':
-            flags |= __READ | __WRITE;
-            *mode = (*mode & (~O_ACCMODE)) | O_RDWR;
+    switch (mstr[0]) {
+        case 'r':
+            flags |= __READ;
+            *mode |= O_RDONLY;
             break;
-        case 'b':
+        case 'w':
+            flags |= __WRITE;
+            *mode |= O_WRONLY | O_CREAT | O_TRUNC;
             break;
-        case 'x':
-            *mode |= O_EXCL;
+        case 'a':
+            flags |= __WRITE | __APPEND;
+            *mode |= O_WRONLY | O_CREAT | O_APPEND;
             break;
         default:
             errno = EINVAL;
             return 0;
+    }
+
+    while (*++mstr) {
+        switch (*mstr) {
+            case '+':
+                flags |= __READ | __WRITE;
+                *mode = (*mode & (~O_ACCMODE)) | O_RDWR;
+                break;
+            case 'b':
+                break;
+            case 'x':
+                *mode |= O_EXCL;
+                break;
+            default:
+                errno = EINVAL;
+                return 0;
         }
     }
 
@@ -67,20 +66,22 @@ static int fopen_flags(const char* mstr, int* mode){
 
 extern FILE* __libc_get_FILE();
 
-FILE* fopen(const char* __restrict__ filename, const char* __restrict__ mode){
+FILE* fopen(const char* __restrict__ filename, const char* __restrict__ mode) {
     int omode = 0;
     int flags = fopen_flags(mode, &omode);
 
-    if(!flags)
+    if (!flags) {
         return NULL;
+    }
 
     FILE* f = __libc_get_FILE();
 
-    if(f){
+    if (f) {
         f->fd = _open(filename, omode, 0666);
 
-        if(f->fd < 0)
+        if (f->fd < 0) {
             return NULL;
+        }
 
         f->flags = flags;
     }

@@ -23,19 +23,22 @@
 #include <stdlib.h>
 #include <syscall.h>
 
-int fclose(FILE* stream){
-    if(stream == NULL)
+int fclose(FILE* stream) {
+    if (stream == NULL) {
         return 0;
+    }
 
     fflush(stream);
 
     int r = 0;
 
-    if(_close(stream->fd))
+    if (_close(stream->fd)) {
         r = EOF;
+    }
 
-    if(stream->flags & __MALLOC)
+    if (stream->flags & __MALLOC) {
         free(stream->buf.p);
+    }
 
     stream->buf.p = NULL;
     stream->flags = 0;

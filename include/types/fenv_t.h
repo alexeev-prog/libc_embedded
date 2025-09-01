@@ -23,12 +23,12 @@
 #define __TYPE_FENV_T_H__
 
 #if defined(__UINT32_TYPE__) || defined(DOXYGEN)
-# if !defined(__FENV_T_DEFINED__)
-#  define __FENV_T_DEFINED__
-typedef struct{
+#    if !defined(__FENV_T_DEFINED__)
+#        define __FENV_T_DEFINED__
 
-}fenv_t;
-# endif /* !defined(__FENV_T_DEFINED__) */
+typedef struct {
+} fenv_t;
+#    endif /* !defined(__FENV_T_DEFINED__) */
 #endif /* defined(__UINT32_TYPE__) || defined(DOXYGEN) */
 
 #endif /* __TYPE_FENV_T_H__ */

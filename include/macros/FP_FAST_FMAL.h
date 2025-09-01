@@ -23,7 +23,7 @@
 #define __MACRO_FP_FAST_FMAL_H__
 
 #if defined(__FP_FAST_FMAL)
-# define FP_FAST_FMAL 1
+#    define FP_FAST_FMAL 1
 #endif /* __FP_FAST_FMAL */
 
 #endif /* __MACRO_FP_FAST_FMAL_H__ */

@@ -21,10 +21,9 @@
  */
 #include <errno.h>
 #include <stdlib.h>
-
 #include <syscall.h>
 
-__attribute__((weak)) size_t _write(int, const void*, size_t){
+__attribute__((weak)) size_t _write(int, const void*, size_t) {
     errno = ENOSYS;
     return (size_t)-1;
 }

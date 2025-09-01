@@ -20,6 +20,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <stdlib.h>
+
 #include "alloc.h"
 
 /**
@@ -31,14 +32,17 @@
  * @param size   size of the individual items
  * @return returns NULL on failure otherwise a pointer to the memory
  */
-void* calloc(size_t nitems, size_t size){
+void* calloc(size_t nitems, size_t size) {
     size_t i = nitems * size;
-    if(nitems != 0 && i / nitems != size)
+    if (nitems != 0 && i / nitems != size) {
         return NULL;
+    }
 
     char* mem = malloc(i);
-    if(mem)
-        for(; i; i--)
+    if (mem) {
+        for (; i; i--) {
             mem[i] = 0;
+        }
+    }
     return mem;
 }

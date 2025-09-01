@@ -22,6 +22,6 @@
 #ifndef __MACROS_SIG_ERR_H__
 #define __MACROS_SIG_ERR_H__
 
-#define SIG_ERR ((void(*)(int))-1)
+#define SIG_ERR ((void (*)(int)) - 1)
 
 #endif /* __MACROS_SIG_ERR_H__ */

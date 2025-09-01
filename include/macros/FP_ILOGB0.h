@@ -22,6 +22,6 @@
 #ifndef __MACRO_FP_ILOGB0_H__
 #define __MACRO_FP_ILOGB0_H__
 
-#define FP_ILOGB0  (-2147483647 - 1)
+#define FP_ILOGB0 (-2147483647 - 1)
 
 #endif /* __MACRO_FP_ILOGB0_H__ */

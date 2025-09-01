@@ -23,8 +23,8 @@
 #define __SYS_X86_64_LINUX_TYPE_SSIZE_T_H__
 
 #if !defined(__SSIZE_T_DEFINED__)
-# define __SSIZE_T_DEFINED__
-# define SSIZE_MAX (__LONG_MAX__)
+#    define __SSIZE_T_DEFINED__
+#    define SSIZE_MAX (__LONG_MAX__)
 typedef long ssize_t;
 #endif /* !defined(__SSIZE_T_DEFINED__) */
 

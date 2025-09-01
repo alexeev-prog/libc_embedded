@@ -22,6 +22,6 @@
 #ifndef __MACRO_MATH_ERRNO_H__
 #define __MACRO_MATH_ERRNO_H__
 
-#define MATH_ERRNO  2
+#define MATH_ERRNO 2
 
 #endif /* __MACRO_MATH_ERRNO_H__ */

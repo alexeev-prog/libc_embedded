@@ -23,7 +23,7 @@
 extern void __libc_init_malloc(void);
 extern void __libc_init_files(void);
 
-void __libc_init(void){
+void __libc_init(void) {
     __libc_init_malloc();
     __libc_init_files();
 }

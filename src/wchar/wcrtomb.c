@@ -22,9 +22,8 @@
 #include <errno.h>
 #include <wchar.h>
 
-size_t wcrtomb(char* __restrict__ s, wchar_t wc,
-               mbstate_t* __restrict__ ps){
-    if((size_t)wc >= 0x100){
+size_t wcrtomb(char* __restrict__ s, wchar_t wc, mbstate_t* __restrict__ ps) {
+    if ((size_t)wc >= 0x100) {
         errno = EILSEQ;
         return (size_t)-1;
     }

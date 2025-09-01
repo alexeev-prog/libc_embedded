@@ -33,6 +33,6 @@
  *         of the corresponding characters (always the same one for any giv en
  *         locale); otherwise, the argument is returned unchanged.
  */
-int toupper(int c){
+int toupper(int c) {
     return islower(c) ? (c - 32) : c;
 }

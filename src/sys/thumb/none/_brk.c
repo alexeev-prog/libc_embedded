@@ -21,17 +21,17 @@
  */
 #include <errno.h>
 #include <stdlib.h>
-
 #include <syscall.h>
 
-void* _brk(void* addr){
+void* _brk(void* addr) {
     extern char __heap_start__;
     extern char __heap_end__;
 
-    if(addr == NULL)
+    if (addr == NULL) {
         return &__heap_start__;
+    }
 
-    if(addr > ((void*)&__heap_end__)){
+    if (addr > ((void*)&__heap_end__)) {
         errno = ENOMEM;
         return NULL;
     }

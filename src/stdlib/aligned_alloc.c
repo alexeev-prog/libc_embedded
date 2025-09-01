@@ -20,6 +20,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <stdlib.h>
+
 #include "alloc.h"
 
 /**
@@ -33,7 +34,7 @@
  * @param  size minimum size of the requested memory block
  * @return returns NULL on failure otherwise a pointer to the memory
  */
-void* aligned_alloc(size_t alignment, size_t size){
+void* aligned_alloc(size_t alignment, size_t size) {
     (void)alignment;
     (void)size;
     return NULL;

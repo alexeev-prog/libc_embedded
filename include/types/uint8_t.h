@@ -23,13 +23,13 @@
 #define __TYPE_UINT8_T_H__
 
 #if defined(__UINT8_TYPE__) || defined(DOXYGEN)
-# if !defined(__UINT8_T_DEFINED__)
-#  define __UINT8_T_DEFINED__
-#  define UINT8_MIN (0)
-#  define UINT8_MAX (__UINT8_MAX__)
-#  define UINT8_C(c) __UINT8_C(c)
+#    if !defined(__UINT8_T_DEFINED__)
+#        define __UINT8_T_DEFINED__
+#        define UINT8_MIN (0)
+#        define UINT8_MAX (__UINT8_MAX__)
+#        define UINT8_C(c) __UINT8_C(c)
 typedef __UINT8_TYPE__ uint8_t;
-# endif /* !defined(__UINT8_T_DEFINED__) */
+#    endif /* !defined(__UINT8_T_DEFINED__) */
 #endif /* defined(__UINT8_TYPE__) || defined(DOXYGEN) */
 
 #endif /* __TYPE_UINT8_T_H__ */

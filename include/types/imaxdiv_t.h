@@ -25,11 +25,12 @@
 #include <types/intmax_t.h>
 
 #if !defined(__IMAXDIV_T_DEFINED__)
-# define __IMAXDIV_T_DEFINED__
-typedef struct{
+#    define __IMAXDIV_T_DEFINED__
+
+typedef struct {
     intmax_t quot;
     intmax_t rem;
-}imaxdiv_t;
+} imaxdiv_t;
 #endif /* !defined(__IMAXDIV_T_DEFINED__) */
 
 #endif /* __TYPE_IMAXDIV_T_H__ */

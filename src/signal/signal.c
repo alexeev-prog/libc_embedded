@@ -24,8 +24,8 @@
 
 void (*__signal_handlers[_SIG_MAX])(int) = {0};
 
-void (*signal(int sig, void (*func)(int)))(int){
-    if((sig < 0) || (sig >= _SIG_MAX)){
+void (*signal(int sig, void (*func)(int)))(int) {
+    if ((sig < 0) || (sig >= _SIG_MAX)) {
         errno = EINVAL;
         return SIG_ERR;
     }

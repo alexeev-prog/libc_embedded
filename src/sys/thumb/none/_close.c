@@ -21,10 +21,9 @@
  */
 #include <errno.h>
 #include <stdlib.h>
-
 #include <syscall.h>
 
-__attribute__((weak)) int _close(int){
+__attribute__((weak)) int _close(int) {
     errno = ENOSYS;
     return -1;
 }

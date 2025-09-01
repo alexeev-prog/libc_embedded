@@ -26,8 +26,9 @@
  * this checks every byte up to the end
  * can be optimized to check sizeof(unsinged int) bytes per loop
  */
-__attribute__((pure)) size_t strlen(const char* s){
+__attribute__((pure)) size_t strlen(const char* s) {
     size_t i = 0;
-    for( i=0 ; s[i] ; i++ );
+    for (i = 0; s[i]; i++)
+        ;
     return i;
 }

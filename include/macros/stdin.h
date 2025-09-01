@@ -25,12 +25,11 @@
 #include <types/FILE.h>
 
 #if defined(__cplusplus)
-extern "C"{
+extern "C"
+{
 #endif /* defined(__cplusplus) */
 
-
 extern FILE* __stdin;
-
 
 #if defined(__cplusplus)
 }

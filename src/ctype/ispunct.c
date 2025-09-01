@@ -29,7 +29,7 @@
  * isspace nor isalnum is true. In the "C" locale, ispunct returns true for
  * every printing character for which neither isspace nor isalnum is true.
  */
-int ispunct(int c){
-    return (((c >= '!') && (c <= '/')) || ((c >= ':') && (c <= '@')) ||
-            ((c >= '[') && (c <= '`')) || ((c >= '{') && (c <= '~')));
+int ispunct(int c) {
+    return (((c >= '!') && (c <= '/')) || ((c >= ':') && (c <= '@')) || ((c >= '[') && (c <= '`'))
+            || ((c >= '{') && (c <= '~')));
 }

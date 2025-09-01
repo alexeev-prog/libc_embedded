@@ -22,23 +22,20 @@
 #ifndef __LOCALE_H__
 #define __LOCALE_H__
 
+#include <macros/LC.h>
+#include <macros/NULL.h>
 #include <types/lconv.h>
 
-#include <macros/NULL.h>
-#include <macros/LC.h>
-
 #if defined(__cplusplus)
-extern "C"{
+extern "C"
+{
 #endif /* defined(__cplusplus) */
-
 
 // 7.11.1 Locale control
 char* setlocale(int category, const char* locale);
 
-
 // 7.11.2 Numeric formatting convention inquiry
 struct lconv* localeconv(void);
-
 
 #if defined(__cplusplus)
 }

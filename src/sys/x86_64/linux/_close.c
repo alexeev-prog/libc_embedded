@@ -20,19 +20,17 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <errno.h>
-
 #include <syscall.h>
 
-int _close(int fd){
+int _close(int fd) {
     int ret;
 
-    __asm volatile(
-        "syscall"
-        : "=a" (ret)
-        : "0"(__NR_close), "D"(fd)
-        : "rcx", "r8", "r9", "r10", "r11", "memory", "cc");
+    __asm volatile("syscall"
+                   : "=a"(ret)
+                   : "0"(__NR_close), "D"(fd)
+                   : "rcx", "r8", "r9", "r10", "r11", "memory", "cc");
 
-    if(ret < 0){
+    if (ret < 0) {
         errno = -(ret);
         ret = -1;
     }

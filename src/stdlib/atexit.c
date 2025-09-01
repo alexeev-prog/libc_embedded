@@ -21,12 +21,13 @@
  */
 #include <stdlib.h>
 
-void(*__atexit_functions[32])(void);
+void (*__atexit_functions[32])(void);
 unsigned int __atexit_function_count = 0;
 
-int atexit(void (*func)(void)){
-    if(__atexit_function_count >= 32)
+int atexit(void (*func)(void)) {
+    if (__atexit_function_count >= 32) {
         return 1;
+    }
     __atexit_functions[__atexit_function_count++] = func;
     return 0;
 }

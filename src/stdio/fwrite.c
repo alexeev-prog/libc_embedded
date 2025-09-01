@@ -21,17 +21,18 @@
  */
 #include <stdio.h>
 
-size_t fwrite(const void* __restrict__ ptr, size_t size, size_t nmemb,
-              FILE* __restrict__ stream){
+size_t fwrite(const void* __restrict__ ptr, size_t size, size_t nmemb, FILE* __restrict__ stream) {
     const unsigned char* p = (const unsigned char*)ptr;
 
-    if(size == 0)
+    if (size == 0) {
         return 0;
+    }
 
-    for(size_t n = 0; n < nmemb; n++){
-        for(size_t m = 0; m < size; m++){
-            if(fputc(*p++, stream) == EOF)
+    for (size_t n = 0; n < nmemb; n++) {
+        for (size_t m = 0; m < size; m++) {
+            if (fputc(*p++, stream) == EOF) {
                 return n;
+            }
         }
     }
     return nmemb;

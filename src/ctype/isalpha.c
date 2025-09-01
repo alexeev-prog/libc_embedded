@@ -30,6 +30,6 @@
  * In the "C" locale, isalpha returns true only for the characters for
  * which isupper or islower is true.
  */
-int isalpha(int c){
+int isalpha(int c) {
     return isupper(c) || islower(c);
 }

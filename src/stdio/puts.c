@@ -21,12 +21,13 @@
  */
 #include <stdio.h>
 
-int puts(const char* s){
-    while(*s){
-        if(*s == putchar(*s))
+int puts(const char* s) {
+    while (*s) {
+        if (*s == putchar(*s)) {
             s++;
-        else
+        } else {
             return EOF;
+        }
     }
     return putchar('\n');
 }

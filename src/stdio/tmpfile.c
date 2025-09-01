@@ -20,19 +20,20 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <stdio.h>
-
 #include <syscall.h>
 
 extern FILE* __libc_get_FILE();
 
-FILE* tmpfile(void){
+FILE* tmpfile(void) {
     FILE* f = __libc_get_FILE();
 
-    if(f)
+    if (f) {
         f->fd = _open("/tmp/", O_RDWR | O_TMPFILE, 0700);
+    }
 
-    if(f->fd < 0)
+    if (f->fd < 0) {
         return NULL;
+    }
 
     f->buf.p = NULL;
     f->flags = __READ | __WRITE;

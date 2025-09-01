@@ -23,13 +23,13 @@
 #define __TYPE_UINT128_T_H__
 
 #if defined(__SIZEOF_INT128__) || defined(DOXYGEN)
-# if !defined(__UINT128_T_DEFINED__)
-#  define __UINT128_T_DEFINED__
-#  define UINT128_MIN (0)
-#  define UINT128_MAX ((__uint128_t)0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)
-#  define UINT128_C(c) ((__uint128_t)(c))
+#    if !defined(__UINT128_T_DEFINED__)
+#        define __UINT128_T_DEFINED__
+#        define UINT128_MIN (0)
+#        define UINT128_MAX ((__uint128_t)0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)
+#        define UINT128_C(c) ((__uint128_t)(c))
 typedef __uint128_t uint128_t;
-# endif /* !defined(__UINT128_T_DEFINED__) */
+#    endif /* !defined(__UINT128_T_DEFINED__) */
 #endif /* defined(__SIZEOF_INT128__) || defined(DOXYGEN) */
 
 #endif /* __TYPE_UINT128_T_H__ */

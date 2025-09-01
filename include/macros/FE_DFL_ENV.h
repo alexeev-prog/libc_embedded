@@ -25,12 +25,11 @@
 #include <types/fenv_t.h>
 
 #if defined(__cplusplus)
-extern "C"{
+extern "C"
+{
 #endif /* defined(__cplusplus) */
 
-
 extern const fenv_t __fe_dfl_env;
-
 
 #if defined(__cplusplus)
 }

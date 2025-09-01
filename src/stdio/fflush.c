@@ -22,23 +22,24 @@
 #include <stdio.h>
 #include <syscall.h>
 
-int fflush(FILE* stream){
-    if(stream->buf.p){
-        if(stream->buf.pos && !(stream->flags & __EOF)){
+int fflush(FILE* stream) {
+    if (stream->buf.p) {
+        if (stream->buf.pos && !(stream->flags & __EOF)) {
             const char* p = stream->buf.p;
-            while(1){
+            while (1) {
                 size_t ret = (size_t)_write(stream->fd, p, stream->buf.pos);
 
                 // _write failed
-                if((ret == ((size_t)-1)) || (ret > stream->buf.pos)){
+                if ((ret == ((size_t)-1)) || (ret > stream->buf.pos)) {
                     stream->flags |= __ERR;
                     return EOF;
                 }
 
                 stream->buf.pos -= ret;
 
-                if(!stream->buf.pos)
+                if (!stream->buf.pos) {
                     break;
+                }
             }
         }
     }

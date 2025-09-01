@@ -23,10 +23,11 @@
 #define __TYPE_MBSTATE_T_H__
 
 #if !defined(__MBSTATE_T_DEFINED__)
-# define __MBSTATE_T_DEFINED__
-typedef struct{
+#    define __MBSTATE_T_DEFINED__
+
+typedef struct {
     char MISSING;
-}mbstate_t;
+} mbstate_t;
 #endif /* !defined(__MBSTATE_T_DEFINED__) */
 
 #endif /* __TYPE_MBSTATE_T_H__ */

@@ -22,47 +22,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int setvbuf(FILE* __restrict__ stream, char* __restrict__ buf, int mode,
-            size_t size){
-    if((mode != _IOFBF) && (mode != _IOLBF) && (mode != _IONBF))
+int setvbuf(FILE* __restrict__ stream, char* __restrict__ buf, int mode, size_t size) {
+    if ((mode != _IOFBF) && (mode != _IOLBF) && (mode != _IONBF)) {
         return -1;
+    }
 
     fflush(stream);
 
     // only change mode, reuse buffer if the size matches
-    if(!buf && stream->buf.p && stream->buf.len == size && mode != _IONBF){
-        if(mode == _IOLBF)
+    if (!buf && stream->buf.p && stream->buf.len == size && mode != _IONBF) {
+        if (mode == _IOLBF) {
             stream->flags |= __IOLBF;
-        else
+        } else {
             stream->flags &= ~__IOLBF;
+        }
         return 0;
     }
 
-    if(stream->flags & __MALLOC)
+    if (stream->flags & __MALLOC) {
         free(stream->buf.p);
-    stream->flags  &= ~(__IOLBF | __MALLOC);
-    stream->buf.p   = NULL;
+    }
+    stream->flags &= ~(__IOLBF | __MALLOC);
+    stream->buf.p = NULL;
     stream->buf.len = 0;
     stream->buf.pos = 0;
 
     // stream is in _IONBF mode
 
-    if(mode != _IONBF){
-        if(!buf){
+    if (mode != _IONBF) {
+        if (!buf) {
             size = size ? size : BUFSIZ;
             buf = malloc(size);
-            if(!buf)
+            if (!buf) {
                 return EOF;
+            }
             stream->flags |= __MALLOC;
         }
 
-        stream->buf.p   = buf;
+        stream->buf.p = buf;
         stream->buf.len = size;
 
         // stream is in _IOFBF mode
 
-        if(mode == _IOLBF)
+        if (mode == _IOLBF) {
             stream->flags |= __IOLBF;
+        }
     }
 
     return 0;

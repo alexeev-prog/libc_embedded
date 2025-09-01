@@ -21,14 +21,14 @@
  */
 #include <complex.h>
 
-double creal(double complex z){
+double creal(double complex z) {
     return __real__ z;
 }
 
-float crealf(float complex z){
+float crealf(float complex z) {
     return __real__ z;
 }
 
-long double creall(long double complex z){
+long double creall(long double complex z) {
     return __real__ z;
 }

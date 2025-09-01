@@ -33,6 +33,6 @@
  *         of the corresponding characters (always the same one for any given
  *         locale); otherwise, the argument is returned unchanged.
  */
-int tolower(int c){
+int tolower(int c) {
     return isupper(c) ? (c + 32) : c;
 }

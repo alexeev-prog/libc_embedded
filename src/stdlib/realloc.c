@@ -19,8 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include <stdlib.h>
 #include <macros/NULL.h>
+#include <stdlib.h>
+
 #include "alloc.h"
 
 /**
@@ -40,22 +41,23 @@
  * @param size new requested size
  * @return returns NULL on failure otherwise a pointer to the memory
  */
-void* realloc(void* ptr, size_t size){
-    if(!ptr)
+void* realloc(void* ptr, size_t size) {
+    if (!ptr) {
         return NULL;
+    }
 
     block_t* blk = BLOCK_FROM_MEM(ptr);
 
     extern char __heap_end__;
 
     // enough space already
-    if(blk->size >= size)
+    if (blk->size >= size) {
         return ptr;
+    }
 
     // just make current block larger if it is the last one
     // does not clean the new memory --> TODO
-    if((!blk->next) && ((((size_t)blk) + BLOCK_SIZE + size ) <=
-                        ((size_t)&__heap_end__))){
+    if ((!blk->next) && ((((size_t)blk) + BLOCK_SIZE + size) <= ((size_t)&__heap_end__))) {
         base.used -= blk->size;
         base.used += size;
         blk->size = size;
@@ -63,8 +65,7 @@ void* realloc(void* ptr, size_t size){
     }
 
     // does not clean the new memory --> TODO
-    if((blk->next->magic == MAGIC_FREE) &&
-       ((blk->size + blk->next->size) >= size)){
+    if ((blk->next->magic == MAGIC_FREE) && ((blk->size + blk->next->size) >= size)) {
         base.used += blk->next->size + BLOCK_SIZE;
         blk->size += blk->next->size + BLOCK_SIZE;
         blk->next = blk->next->next;
@@ -74,16 +75,19 @@ void* realloc(void* ptr, size_t size){
 
     // just create a new block if it could not be extended
     char* mem = malloc(size);
-    if(!mem)
+    if (!mem) {
         return ptr;
+    }
 
     // copy and clear memory
-    char*  orig = ptr;
+    char* orig = ptr;
     size_t i;
-    for(i = 0; i < blk->size; i++)
+    for (i = 0; i < blk->size; i++) {
         mem[i] = orig[i];
-    for(; i < size; i++)
+    }
+    for (; i < size; i++) {
         mem[i] = 0;
+    }
     free(ptr);
     return mem;
 }

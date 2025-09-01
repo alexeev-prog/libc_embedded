@@ -31,6 +31,6 @@
  * horizontal tab ('\t'). In the "C" locale, isblank returns true only for
  * the standard blank characters.
  */
-int isblank(int c){
+int isblank(int c) {
     return ((c == '\t') || (c == ' '));
 }

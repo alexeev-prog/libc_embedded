@@ -21,12 +21,13 @@
  */
 #include <stdlib.h>
 
-void(*__at_quick_exit_functions[32])(void);
+void (*__at_quick_exit_functions[32])(void);
 unsigned int __at_quick_exit_function_count = 0;
 
-int at_quick_exit(void (*func)(void)){
-    if(__at_quick_exit_function_count >= 32)
+int at_quick_exit(void (*func)(void)) {
+    if (__at_quick_exit_function_count >= 32) {
         return 1;
+    }
     __at_quick_exit_functions[__at_quick_exit_function_count++] = func;
     return 0;
 }

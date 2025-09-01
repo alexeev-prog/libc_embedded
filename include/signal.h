@@ -22,25 +22,22 @@
 #ifndef __SIGNAL_H__
 #define __SIGNAL_H__
 
+#include <macros/SIG.h>
+#include <macros/SIG_DFL.h>
+#include <macros/SIG_ERR.h>
+#include <macros/SIG_IGN.h>
 #include <types/sig_atomic_t.h>
 
-#include <macros/SIG_DFL.h>
-#include <macros/SIG_IGN.h>
-#include <macros/SIG_ERR.h>
-#include <macros/SIG.h>
-
 #if defined(__cplusplus)
-extern "C"{
+extern "C"
+{
 #endif /* defined(__cplusplus) */
-
 
 // 7.14.1 Specify signal handling
 void (*signal(int sig, void (*func)(int)))(int);
 
-
 // 7.14.2 Send signal
 int raise(int sig);
-
 
 #if defined(__cplusplus)
 }

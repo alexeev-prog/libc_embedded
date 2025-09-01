@@ -22,6 +22,6 @@
 #ifndef __MACRO_MATH_ERREXCEPT_H__
 #define __MACRO_MATH_ERREXCEPT_H__
 
-#define MATH_ERREXCEPT  1
+#define MATH_ERREXCEPT 1
 
 #endif /* __MACRO_MATH_ERREXCEPT_H__ */

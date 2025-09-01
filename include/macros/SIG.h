@@ -22,15 +22,15 @@
 #ifndef __MACROS_SIG_H__
 #define __MACROS_SIG_H__
 
-#define SIGABRT  (0) /* abnormal termination,                             */
-                     /* such as is initiated by the abort function        */
-#define SIGFPE   (1) /* an erroneous arithmetic operation, such as        */
-                     /* zero divide or an operation resulting in overflow */
-#define SIGILL   (2) /* detection of an invalid function image,           */
-                     /* such as an invalid instruction                    */
-#define SIGINT   (3) /* receipt of an interactive attention signal        */
-#define SIGSEGV  (4) /* an invalid access to storage                      */
-#define SIGTERM  (5) /* a termination request sent to the program         */
+#define SIGABRT (0) /* abnormal termination,                             */
+/* such as is initiated by the abort function        */
+#define SIGFPE (1) /* an erroneous arithmetic operation, such as        */
+/* zero divide or an operation resulting in overflow */
+#define SIGILL (2) /* detection of an invalid function image,           */
+/* such as an invalid instruction                    */
+#define SIGINT (3) /* receipt of an interactive attention signal        */
+#define SIGSEGV (4) /* an invalid access to storage                      */
+#define SIGTERM (5) /* a termination request sent to the program         */
 
 #define _SIG_MAX (6) /* highest valid signal */
 

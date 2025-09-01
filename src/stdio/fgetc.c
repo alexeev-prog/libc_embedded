@@ -22,22 +22,25 @@
 #include <stdio.h>
 #include <syscall.h>
 
-int fgetc(FILE* stream){
-    if(stream->flags & __EOF)
+int fgetc(FILE* stream) {
+    if (stream->flags & __EOF) {
         return EOF;
+    }
 
     // TODO: handle buffering
 
     unsigned char c;
     size_t ret = (size_t)_read(stream->fd, &c, 1);
 
-    if(ret == 1)
+    if (ret == 1) {
         return (int)c;
+    }
 
-    if(!ret)
+    if (!ret) {
         stream->flags |= __EOF;
-    else if(ret == ((size_t)-1))
+    } else if (ret == ((size_t)-1)) {
         stream->flags |= __ERR;
+    }
 
     return EOF;
 }

@@ -21,10 +21,9 @@
  */
 #include <errno.h>
 #include <stdlib.h>
-
 #include <syscall.h>
 
-__attribute__((weak)) int _fsync(int){
+__attribute__((weak)) int _fsync(int) {
     errno = ENOSYS;
     return -1;
 }

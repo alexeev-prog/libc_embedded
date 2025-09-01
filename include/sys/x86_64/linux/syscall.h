@@ -23,15 +23,13 @@
 #define __SYS_X86_64_LINUX_SYSCALL_H__
 
 #include <macros/syscall.h>
-
-#include <types/size_t.h>
-
-#include <types/ssize_t.h>
 #include <types/mode_t.h>
 #include <types/pid_t.h>
+#include <types/size_t.h>
+#include <types/ssize_t.h>
 
-ssize_t _read(int fd, void *buf, size_t size);
-ssize_t _write(int fd, const void *buf, size_t size);
+ssize_t _read(int fd, void* buf, size_t size);
+ssize_t _write(int fd, const void* buf, size_t size);
 int _open(const char* fd, int flags, mode_t mode);
 int _close(int fd);
 void* _brk(void* addr);

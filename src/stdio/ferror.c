@@ -21,6 +21,6 @@
  */
 #include <stdio.h>
 
-int __attribute__((pure))ferror(FILE* stream){
+int __attribute__((pure)) ferror(FILE* stream) {
     return (int)(stream->flags & __ERR);
 }

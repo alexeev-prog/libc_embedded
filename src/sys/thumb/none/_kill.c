@@ -21,10 +21,11 @@
  */
 #include <syscall.h>
 
-int _kill(int pid, int sig){
-    (void)pid; (void)sig;
+int _kill(int pid, int sig) {
+    (void)pid;
+    (void)sig;
 
     // TODO: correctly pass the signal to swi
-    __asm volatile ("swi %a0" :: "i" (1));
+    __asm volatile("swi %a0" ::"i"(1));
     return 0;
 }

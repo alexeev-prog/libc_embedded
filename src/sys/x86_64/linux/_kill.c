@@ -20,20 +20,18 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <errno.h>
-
 #include <syscall.h>
 #include <types/pid_t.h>
 
-int _kill(pid_t pid, int sig){
+int _kill(pid_t pid, int sig) {
     int ret;
 
-    __asm volatile(
-        "syscall"
-        : "=a" (ret)
-        : "0"(__NR_kill), "D"(pid), "S"(sig)
-        : "rcx", "r8", "r9", "r10", "r11", "memory", "cc");
+    __asm volatile("syscall"
+                   : "=a"(ret)
+                   : "0"(__NR_kill), "D"(pid), "S"(sig)
+                   : "rcx", "r8", "r9", "r10", "r11", "memory", "cc");
 
-    if(ret < 0){
+    if (ret < 0) {
         errno = -(ret);
         ret = -1;
     }

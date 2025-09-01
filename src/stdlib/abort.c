@@ -26,7 +26,7 @@
 /**
  * causes abnormal program termination to occur
  */
-_Noreturn void abort(){
+_Noreturn void abort() {
     raise(SIGABRT);
     _Exit(EXIT_FAILURE);
     __builtin_unreachable();

@@ -19,12 +19,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#include <errno.h>    // for errno
 #include <stdio.h>
-#include <string.h> // for strerror
-#include <errno.h>  // for errno
+#include <string.h>    // for strerror
 
-void perror(const char* s){
-    if(s){
+void perror(const char* s) {
+    if (s) {
         fputs(s, stderr);
         fputs(": ", stderr);
     }

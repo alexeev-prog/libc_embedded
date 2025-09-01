@@ -23,11 +23,12 @@
 #define __TYPE_DIV_T_H__
 
 #if !defined(__DIV_T_DEFINED__)
-# define __DIV_T_DEFINED__
-typedef struct{
+#    define __DIV_T_DEFINED__
+
+typedef struct {
     int quot;
     int rem;
-}div_t;
+} div_t;
 #endif /* !defined(__DIV_T_DEFINED__) */
 
 #endif /* __TYPE_DIV_T_H__ */

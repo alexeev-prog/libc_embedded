@@ -23,7 +23,7 @@
 #define __TYPE_FEXCEPT_T_H__
 
 #if !defined(__FEXCEPT_T_DEFINED__)
-# define __FEXCEPT_T_DEFINED__
+#    define __FEXCEPT_T_DEFINED__
 typedef unsigned int fexcept_t;
 #endif /* !defined(__FEXCEPT_T_DEFINED__) */
 

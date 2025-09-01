@@ -22,16 +22,16 @@
 #ifndef __COMPLEX_H__
 #define __COMPLEX_H__
 
-#include <macros/complex.h>
-#include <macros/_Complex_I.h>
-#include <macros/imaginary.h>
-#include <macros/_Imaginary_I.h>
 #include <macros/I.h>
+#include <macros/_Complex_I.h>
+#include <macros/_Imaginary_I.h>
+#include <macros/complex.h>
+#include <macros/imaginary.h>
 
 #if defined(__cplusplus)
-extern "C"{
+extern "C"
+{
 #endif /* defined(__cplusplus) */
-
 
 // 7.3.5 Trigonometric functions
 double complex cacos(double complex z);
@@ -58,7 +58,6 @@ double complex ctan(double complex z);
 float complex ctanf(float complex z);
 long double complex ctanl(long double complex z);
 
-
 // 7.3.6 Hyperbolic functions
 double complex cacosh(double complex z);
 float complex cacoshf(float complex z);
@@ -84,7 +83,6 @@ double complex ctanh(double complex z);
 float complex ctanhf(float complex z);
 long double complex ctanhl(long double complex z);
 
-
 // 7.3.7 Exponential and logarithmic functions
 double complex cexp(double complex z);
 float complex cexpf(float complex z);
@@ -93,7 +91,6 @@ long double complex cexpl(long double complex z);
 double complex clog(double complex z);
 float complex clogf(float complex z);
 long double complex clogl(long double complex z);
-
 
 // 7.3.8 Power and absolute-value functions
 double cabs(double complex z);
@@ -108,7 +105,6 @@ double complex csqrt(double complex z);
 float complex csqrtf(float complex z);
 long double complex csqrtl(long double complex z);
 
-
 // 7.3.9 Manipulation functions
 double carg(double complex z);
 float cargf(float complex z);
@@ -118,7 +114,7 @@ double cimag(double complex z);
 float cimagf(float complex z);
 long double cimagl(long double complex z);
 
-#define CMPLX(x, y)  ((double complex)((double)(x) + I * (double)(y)))
+#define CMPLX(x, y) ((double complex)((double)(x) + I * (double)(y)))
 #define CMPLXF(x, y) ((float complex)((float)(x) + I * (float)(y)))
 #define CMPLXL(x, y) ((long double complex)((long double)(x) + I * (long double)(y)))
 
@@ -133,7 +129,6 @@ long double complex cprojl(long double complex z);
 double creal(double complex z);
 float crealf(float complex z);
 long double creall(long double complex z);
-
 
 #if defined(__cplusplus)
 }

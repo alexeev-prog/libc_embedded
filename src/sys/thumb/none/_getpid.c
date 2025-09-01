@@ -21,6 +21,6 @@
  */
 #include <syscall.h>
 
-int _getpid(void){
+int _getpid(void) {
     return 1;
 }

@@ -27,6 +27,6 @@
  * The isxdigit function tests for any hexadecimal-digit
  * character (as defined in 6.4.4.1).
  */
-int isxdigit(int c){
+int isxdigit(int c) {
     return (isdigit(c) || ((c >= 'A') && (c <= 'F')) || ((c >= 'a') && (c <= 'f')));
 }

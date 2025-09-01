@@ -20,21 +20,19 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <errno.h>
-#include <types/size_t.h>
-
 #include <syscall.h>
+#include <types/size_t.h>
 #include <types/ssize_t.h>
 
-ssize_t _read(int fd, void *buf, size_t size){
+ssize_t _read(int fd, void* buf, size_t size) {
     ssize_t ret;
 
-    __asm volatile(
-        "syscall"
-        : "=a" (ret)
-        : "0"(__NR_read), "D"(fd), "S"(buf), "d"(size)
-        : "rcx", "r8", "r9", "r10", "r11", "memory", "cc");
+    __asm volatile("syscall"
+                   : "=a"(ret)
+                   : "0"(__NR_read), "D"(fd), "S"(buf), "d"(size)
+                   : "rcx", "r8", "r9", "r10", "r11", "memory", "cc");
 
-    if(ret <= -125){
+    if (ret <= -125) {
         errno = (int)(-ret);
         ret = -1;
     }

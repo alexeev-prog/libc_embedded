@@ -21,19 +21,17 @@
  */
 #include <errno.h>
 #include <stdlib.h>
-
 #include <syscall.h>
 
-void* _brk(void* addr){
+void* _brk(void* addr) {
     long ret;
 
-    __asm volatile(
-        "syscall"
-        : "=a"(ret)
-        : "0"(__NR_brk), "D"(addr)
-        : "rcx", "r8", "r9", "r10", "r11", "memory", "cc");
+    __asm volatile("syscall"
+                   : "=a"(ret)
+                   : "0"(__NR_brk), "D"(addr)
+                   : "rcx", "r8", "r9", "r10", "r11", "memory", "cc");
 
-    if(ret < 0){
+    if (ret < 0) {
         errno = ((int)-ret);
         ret = 0;
     }

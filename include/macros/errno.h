@@ -23,12 +23,11 @@
 #define __MACROS_ERRNO_H__
 
 #if defined(__cplusplus)
-extern "C"{
+extern "C"
+{
 #endif /* defined(__cplusplus) */
 
-
 int* __errno(void);
-
 
 #if defined(__cplusplus)
 }

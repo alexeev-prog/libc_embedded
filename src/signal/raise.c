@@ -21,22 +21,21 @@
  */
 #include <errno.h>
 #include <signal.h>
-
 #include <syscall.h>
 
 extern void (*__signal_handlers[_SIG_MAX])(int);
 
-int raise(int sig){
-    if((sig < 0) || (sig >= _SIG_MAX)){
+int raise(int sig) {
+    if ((sig < 0) || (sig >= _SIG_MAX)) {
         errno = EINVAL;
         return -1;
     }
 
     void (*tmp)(int) = __signal_handlers[sig];
 
-    if(tmp == SIG_DFL){
+    if (tmp == SIG_DFL) {
         return _kill(_getpid(), sig);
-    }else if(tmp != SIG_IGN){
+    } else if (tmp != SIG_IGN) {
         __signal_handlers[sig] = SIG_DFL;
         tmp(sig);
     }

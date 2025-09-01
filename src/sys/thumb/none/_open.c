@@ -20,11 +20,10 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <errno.h>
-
 #include <syscall.h>
 #include <types/mode_t.h>
 
-int _open(const char*, int, mode_t){
+int _open(const char*, int, mode_t) {
     errno = ENOSYS;
     return -1;
 }

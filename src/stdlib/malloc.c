@@ -22,6 +22,7 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <types/size_t.h>
+
 #include "alloc.h"
 
 /**
@@ -34,14 +35,14 @@
  * @param  size minimum size of the requested memory block
  * @return returns NULL on failure otherwise a pointer to the memory
  */
-void* malloc(size_t size){
+void* malloc(size_t size) {
     block_t* block = find_free_block(size);
 
-    if(block){
+    if (block) {
         split_block(block, size);
-    }else{
+    } else {
         block = create_block(size);
-        if(!block){
+        if (!block) {
             errno = ENOMEM;
             return NULL;
         }

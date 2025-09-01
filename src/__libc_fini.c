@@ -22,6 +22,6 @@
 
 extern void __libc_fini_files(void);
 
-void __libc_fini(void){
+void __libc_fini(void) {
     __libc_fini_files();
 }

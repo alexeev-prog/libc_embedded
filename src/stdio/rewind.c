@@ -21,7 +21,7 @@
  */
 #include <stdio.h>
 
-void rewind(FILE* stream){
+void rewind(FILE* stream) {
     stream->flags &= ~__ERR;
     fseek(stream, 0L, SEEK_SET);
 }

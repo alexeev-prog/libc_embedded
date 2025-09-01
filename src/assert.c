@@ -20,11 +20,10 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <assert.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-void __assert(const char* expr, const char* file,
-              const char* line, const char* func){
+void __assert(const char* expr, const char* file, const char* line, const char* func) {
     fputs("assertion failed: ", stderr);
     fputs(expr, stderr);
     fputs("\n\t in file: ", stderr);

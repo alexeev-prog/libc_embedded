@@ -21,6 +21,6 @@
  */
 #include <stdio.h>
 
-void clearerr(FILE* stream){
+void clearerr(FILE* stream) {
     stream->flags &= ~(__EOF | __ERR);
 }

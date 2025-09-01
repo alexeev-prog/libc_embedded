@@ -25,7 +25,7 @@
 /*
  * stdlib configuration
  */
-//#define MALLOC_USE_BEST_FIT
+// #define MALLOC_USE_BEST_FIT
 #define MALLOC_USE_FIRST_FIT
 
 #endif /* __CONFIG_H__ */

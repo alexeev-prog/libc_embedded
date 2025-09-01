@@ -27,6 +27,6 @@
  * The isdigit function tests for any decimal-digit character
  * (as defined in 5.2.1).
  */
-int isdigit(int c){
+int isdigit(int c) {
     return ((c >= '0') && (c <= '9'));
 }

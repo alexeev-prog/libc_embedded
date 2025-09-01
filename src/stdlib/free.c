@@ -20,6 +20,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <stdlib.h>
+
 #include "alloc.h"
 
 /**
@@ -28,13 +29,14 @@
  *
  * @param ptr pointer to memory block
  */
-void free(void* ptr){
-    if(!ptr)
+void free(void* ptr) {
+    if (!ptr) {
         return;
+    }
 
     block_t* block = BLOCK_FROM_MEM(ptr);
 
-    if(block->magic == MAGIC_USED){
+    if (block->magic == MAGIC_USED) {
         free_block(block);
         merge_blocks(block);
     }

@@ -24,9 +24,9 @@
 #define __STDNORETURN_H__
 
 #if defined(__cplusplus)
-# define _Noreturn [[noreturn]]
+#    define _Noreturn [[noreturn]]
 #else
-# define noreturn _Noreturn
+#    define noreturn _Noreturn
 #endif /* defined(__cplusplus) */
 
 #endif /* __STDNORETURN_H__ */

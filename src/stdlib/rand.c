@@ -25,11 +25,11 @@
 static unsigned long int __rand_next = 1;
 
 // RAND_MAX assumed to be 32767
-int rand(void){
+int rand(void) {
     __rand_next = __rand_next * 1103515245 + 12345;
-    return (unsigned int)(__rand_next/65536) % 32768;
+    return (unsigned int)(__rand_next / 65536) % 32768;
 }
 
-void srand(unsigned int seed){
+void srand(unsigned int seed) {
     __rand_next = seed;
 }

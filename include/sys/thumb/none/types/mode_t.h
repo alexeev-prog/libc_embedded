@@ -23,25 +23,25 @@
 #define __SYS_THUMB_NONE_TYPE_MODE_T_H__
 
 #if defined(__UINT32_TYPE__) || defined(DOXYGEN)
-# if !defined(__MODE_T_DEFINED__)
-#  define __MODE_T_DEFINED__
+#    if !defined(__MODE_T_DEFINED__)
+#        define __MODE_T_DEFINED__
 
-#  define O_ACCMODE   00000003
-#  define O_RDONLY    00000000
-#  define O_WRONLY    00000001
-#  define O_RDWR      00000002
-#  define O_CREAT     00000100
-#  define O_EXCL      00000200
-#  define O_NOCTTY    00000400
-#  define O_TRUNC     00001000
-#  define O_APPEND    00002000
-#  define O_DIRECTORY 00200000
+#        define O_ACCMODE 00000003
+#        define O_RDONLY 00000000
+#        define O_WRONLY 00000001
+#        define O_RDWR 00000002
+#        define O_CREAT 00000100
+#        define O_EXCL 00000200
+#        define O_NOCTTY 00000400
+#        define O_TRUNC 00001000
+#        define O_APPEND 00002000
+#        define O_DIRECTORY 00200000
 
-#  define __O_TMPFILE 020000000
-#  define O_TMPFILE   (__O_TMPFILE | O_DIRECTORY)
+#        define __O_TMPFILE 020000000
+#        define O_TMPFILE (__O_TMPFILE | O_DIRECTORY)
 
 typedef __UINT32_TYPE__ mode_t;
-# endif /* !defined(__MODE_T_DEFINED__) */
+#    endif /* !defined(__MODE_T_DEFINED__) */
 #endif /* defined(__UINT32_TYPE__) || defined(DOXYGEN) */
 
 #endif /* __SYS_THUMB_NONE_TYPE_MODE_T_H__ */

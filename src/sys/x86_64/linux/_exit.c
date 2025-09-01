@@ -21,12 +21,11 @@
  */
 #include <syscall.h>
 
-void _exit(int status){
+void _exit(int status) {
     int ret;
 
-    __asm volatile(
-        "syscall"
-        : "=a" (ret)
-        : "0"(__NR_exit), "D"(status)
-        : "rcx", "r8", "r9", "r10", "r11", "memory", "cc");
+    __asm volatile("syscall"
+                   : "=a"(ret)
+                   : "0"(__NR_exit), "D"(status)
+                   : "rcx", "r8", "r9", "r10", "r11", "memory", "cc");
 }

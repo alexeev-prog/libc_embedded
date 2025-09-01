@@ -22,6 +22,6 @@
 #ifndef __MACROS_SIG_DFL_H__
 #define __MACROS_SIG_DFL_H__
 
-#define SIG_DFL ((void(*)(int))0)
+#define SIG_DFL ((void (*)(int))0)
 
 #endif /* __MACROS_SIG_DFL_H__ */

@@ -21,16 +21,17 @@
  */
 #include <string.h>
 
-char* strncpy(char* __restrict__ s1, const char* __restrict__ s2, size_t n){
+char* strncpy(char* __restrict__ s1, const char* __restrict__ s2, size_t n) {
     char* p = s1;
 
-    while(n > 0){
+    while (n > 0) {
         n--;
-        if(!(*s1++ = *s2++))
+        if (!(*s1++ = *s2++)) {
             break;
+        }
     }
 
-    while(n > 0){
+    while (n > 0) {
         n--;
         *s1++ = 0;
     }

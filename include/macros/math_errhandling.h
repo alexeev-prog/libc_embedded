@@ -22,13 +22,13 @@
 #ifndef __MACRO_MATH_ERRHANDLING_H__
 #define __MACRO_MATH_ERRHANDLING_H__
 
-#include <macros/MATH_ERRNO.h>
 #include <macros/MATH_ERREXCEPT.h>
+#include <macros/MATH_ERRNO.h>
 
 #if defined(__FAST_MATH__)
-# define math_errhandling  (MATH_ERREXCEPT)
+#    define math_errhandling (MATH_ERREXCEPT)
 #else
-# define math_errhandling  (MATH_ERRNO | MATH_ERREXCEPT)
+#    define math_errhandling (MATH_ERRNO | MATH_ERREXCEPT)
 #endif
 
 #endif /* __MACRO_MATH_ERRHANDLING_H__ */

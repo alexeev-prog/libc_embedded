@@ -25,30 +25,32 @@
 #include <types/size_t.h>
 
 #if !defined(__FILE_DEFINED__)
-# define __FILE_DEFINED__
-# define __READ   ((int)(1 << 0))
-# define __WRITE  ((int)(1 << 1))
-# define __IOLBF  ((int)(1 << 2))
-# define __MALLOC ((int)(1 << 3))
-# define __EOF    ((int)(1 << 4))
-# define __ERR    ((int)(1 << 5))
-# define __APPEND ((int)(1 << 6))
+#    define __FILE_DEFINED__
+#    define __READ ((int)(1 << 0))
+#    define __WRITE ((int)(1 << 1))
+#    define __IOLBF ((int)(1 << 2))
+#    define __MALLOC ((int)(1 << 3))
+#    define __EOF ((int)(1 << 4))
+#    define __ERR ((int)(1 << 5))
+#    define __APPEND ((int)(1 << 6))
 
-struct __fbuf{
-    char*  p;
+struct __fbuf {
+    char* p;
     size_t len;
     size_t pos;
 };
 
-typedef struct{
-    int           fd;
-    int           flags;
-    union{
+typedef struct {
+    int fd;
+    int flags;
+
+    union {
         struct __fbuf buf;
-        char          nbuf[1];
+        char nbuf[1];
     };
-    char          cbuf[1];
-}FILE;
+
+    char cbuf[1];
+} FILE;
 #endif /* !defined(__FILE_DEFINED__) */
 
 #endif /* __TYPE_FILE_H__ */

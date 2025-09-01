@@ -23,7 +23,7 @@
 #define __SYS_X86_64_LINUX_TYPE_PID_T_H__
 
 #if !defined(__PID_T_DEFINED__)
-# define __PID_T_DEFINED__
+#    define __PID_T_DEFINED__
 typedef long pid_t;
 #endif /* !defined(__PID_T_DEFINED__) */
 

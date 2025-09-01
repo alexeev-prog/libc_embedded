@@ -32,10 +32,10 @@ FILE* __stdin;
 FILE* __stdout;
 FILE* __stderr;
 
-void __libc_init_files(void){
+void __libc_init_files(void) {
     memset(__libc_files, 0, sizeof(__libc_files));
 
-    __stdin  = &__libc_files[0];
+    __stdin = &__libc_files[0];
     __stdout = &__libc_files[1];
     __stderr = &__libc_files[2];
 
@@ -55,15 +55,17 @@ void __libc_init_files(void){
     __stderr->buf.len = BUFSIZ;
 }
 
-void __libc_fini_files(void){
-    for(size_t i = 0; i < FOPEN_MAX; ++i)
-        if(__libc_files[i].flags != 0)
+void __libc_fini_files(void) {
+    for (size_t i = 0; i < FOPEN_MAX; ++i) {
+        if (__libc_files[i].flags != 0) {
             fclose(&__libc_files[i]);
+        }
+    }
 }
 
-FILE* __libc_get_FILE(){
-    for(size_t i = 0; i < FOPEN_MAX; ++i){
-        if(__libc_files[i].flags == 0){
+FILE* __libc_get_FILE() {
+    for (size_t i = 0; i < FOPEN_MAX; ++i) {
+        if (__libc_files[i].flags == 0) {
             memset(&__libc_files[i], 0, sizeof(FILE));
             return &__libc_files[i];
         }

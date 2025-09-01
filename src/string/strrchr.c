@@ -21,13 +21,15 @@
  */
 #include <string.h>
 
-__attribute__((pure)) char* strrchr(const char* s, int c){
+__attribute__((pure)) char* strrchr(const char* s, int c) {
     unsigned char* p = (unsigned char*)s;
     unsigned char* l = NULL;
 
-    while(*p)
-        if(*p++ == (unsigned char)c)
+    while (*p) {
+        if (*p++ == (unsigned char)c) {
             l = p - 1;
+        }
+    }
 
     return (char*)l;
 }

@@ -19,9 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
 
-int vscanf(const char* __restrict__ format, va_list arg){
+int vscanf(const char* __restrict__ format, va_list arg) {
     return vfscanf(stdin, format, arg);
 }
