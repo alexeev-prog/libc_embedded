@@ -7,6 +7,9 @@
  * This file is part of libc (https://gitlab.com/peterzuger/libc).
  * Copyright (c) 2019 Peter Züger.
  *
+ * Fork - (https://github.com/alexeev-prog/libc_embedded
+ * Copyright (C) 2025 Alexeev Bronislav
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, version 3.

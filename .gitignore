@@ -25,3 +25,4 @@
 # executables
 *.out
 *.hex
+.vscode/
