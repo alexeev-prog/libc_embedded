@@ -1,3 +1,15 @@
+commit 0b132934b7be079cab8910d5670c8c5d2858af99
+Author: Alexeev Bronislav <alexeev.dev@mail.ru>
+Date:   Tue Sep 2 22:00:39 2025 +0700
+
+    update docstrings
+
+commit 8a4aa8bbfbba9de92d1708f26754f382f5811923
+Author: Alexeev Bronislav <alexeev.dev@mail.ru>
+Date:   Mon Sep 1 20:53:17 2025 +0700
+
+    update codestyle
+
 commit 45de4661968a818c0a10e1714d5d6f5f97a6cfe4
 Author: Peter Züger <zueger.peter@icloud.com>
 Date:   Mon Aug 25 15:06:45 2025 +0200
