@@ -35,8 +35,7 @@
 #include <types/wchar_t.h>
 
 #if defined(__cplusplus)
-extern "C"
-{
+extern "C" {
 #endif /* defined(__cplusplus) */
 
 // 7.22.1 Numeric conversion functions

@@ -29,8 +29,7 @@
 #include <macros/imaginary.h>
 
 #if defined(__cplusplus)
-extern "C"
-{
+extern "C" {
 #endif /* defined(__cplusplus) */
 
 // 7.3.5 Trigonometric functions

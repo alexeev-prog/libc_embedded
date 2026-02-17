@@ -28,8 +28,7 @@
 #include <types/wint_t.h>
 
 #if defined(__cplusplus)
-extern "C"
-{
+extern "C" {
 #endif /* defined(__cplusplus) */
 
 // 7.30.2 Wide character classification utilities

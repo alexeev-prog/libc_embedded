@@ -33,8 +33,7 @@
 #include <types/wint_t.h>
 
 #if defined(__cplusplus)
-extern "C"
-{
+extern "C" {
 #endif /* defined(__cplusplus) */
 
 // 7.29.2 Formatted wide character input/output functions
@@ -106,10 +105,11 @@ size_t wcslen(const wchar_t* s);
 wchar_t* wmemset(wchar_t* s, wchar_t c, size_t n);
 
 // 7.29.5 Wide character time conversion functions
-size_t wcsftime(wchar_t* __restrict__ s,
-                size_t maxsize,
-                const wchar_t* __restrict__ format,
-                const struct tm* __restrict__ timeptr);
+size_t wcsftime(
+    wchar_t* __restrict__ s,
+    size_t maxsize,
+    const wchar_t* __restrict__ format,
+    const struct tm* __restrict__ timeptr);
 
 // 7.29.6 Extended multibyte/wide character conversion utilities
 // 7.29.6.1 Single-byte/wide character conversion functions
@@ -125,14 +125,10 @@ size_t mbrtowc(wchar_t* __restrict__ pwc, const char* __restrict__ s, size_t n, 
 size_t wcrtomb(char* __restrict__ s, wchar_t wc, mbstate_t* __restrict__ ps);
 
 // 7.29.6.4 Restartable multibyte/wide string conversion functions
-size_t mbsrtowcs(wchar_t* __restrict__ dst,
-                 const char** __restrict__ src,
-                 size_t len,
-                 mbstate_t* __restrict__ ps);
-size_t wcsrtombs(char* __restrict__ dst,
-                 const wchar_t** __restrict__ src,
-                 size_t len,
-                 mbstate_t* __restrict__ ps);
+size_t mbsrtowcs(
+    wchar_t* __restrict__ dst, const char** __restrict__ src, size_t len, mbstate_t* __restrict__ ps);
+size_t wcsrtombs(
+    char* __restrict__ dst, const wchar_t** __restrict__ src, size_t len, mbstate_t* __restrict__ ps);
 
 #if defined(__cplusplus)
 }

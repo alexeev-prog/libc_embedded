@@ -26,8 +26,7 @@
 #include <types/size_t.h>
 
 #if defined(__cplusplus)
-extern "C"
-{
+extern "C" {
 #endif /* defined(__cplusplus) */
 
 // 7.24.2 Copying functions

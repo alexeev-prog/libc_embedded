@@ -35,8 +35,7 @@
 #endif /* !defined(__cplusplus) */
 
 #if defined(__cplusplus)
-extern "C"
-{
+extern "C" {
 #endif /* defined(__cplusplus) */
 
 _Noreturn void __assert(const char* expr, const char* file, const char* line, const char* func);

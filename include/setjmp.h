@@ -29,8 +29,7 @@
 #define setjmp(jmp_buf) (0)
 
 #if defined(__cplusplus)
-extern "C"
-{
+extern "C" {
 #endif /* defined(__cplusplus) */
 
 // 7.13.2 Restore calling environment

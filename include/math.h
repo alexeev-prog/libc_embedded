@@ -60,8 +60,7 @@
 #endif /* !defined(__cplusplus) */
 
 #if defined(__cplusplus)
-extern "C"
-{
+extern "C" {
 #endif /* defined(__cplusplus) */
 
 // 7.12.4 Trigonometric functions

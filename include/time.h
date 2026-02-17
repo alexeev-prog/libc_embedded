@@ -32,8 +32,7 @@
 #include <types/tm.h>
 
 #if defined(__cplusplus)
-extern "C"
-{
+extern "C" {
 #endif /* defined(__cplusplus) */
 
 // 7.27.2 Time manipulation functions
@@ -48,10 +47,11 @@ char* asctime(const struct tm* timeptr);
 char* ctime(const time_t* timer);
 struct tm* gmtime(const time_t* timer);
 struct tm* localtime(const time_t* timer);
-size_t strftime(char* __restrict__ s,
-                size_t maxsize,
-                const char* __restrict__ format,
-                const struct tm* __restrict__ timeptr);
+size_t strftime(
+    char* __restrict__ s,
+    size_t maxsize,
+    const char* __restrict__ format,
+    const struct tm* __restrict__ timeptr);
 
 #if defined(__cplusplus)
 }

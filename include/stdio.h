@@ -44,8 +44,7 @@
 #include <types/va_list.h>
 
 #if defined(__cplusplus)
-extern "C"
-{
+extern "C" {
 #endif /* defined(__cplusplus) */
 
 // 7.21.4 Operations on files

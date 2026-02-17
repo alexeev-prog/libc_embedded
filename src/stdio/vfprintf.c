@@ -33,8 +33,7 @@
 #define ALTERNATE ((unsigned int)(1 << 3))
 #define ZERO_PADDING ((unsigned int)(1 << 4))
 
-typedef enum
-{
+typedef enum {
     CHAR,
     SHORT,
     LONG,
@@ -247,7 +246,7 @@ int vfprintf(FILE* __restrict__ stream, const char* __restrict__ format, va_list
                     }
                 } else {
                     wchar_t* wstr = va_arg(arg, wchar_t*);
-                    mbstate_t mb = {0};
+                    mbstate_t mb = { 0 };
                     char str[MB_CUR_MAX];
                     size_t n, m;
                     while (*wstr) {

@@ -23,8 +23,7 @@
 #define __CTYPE_H__
 
 #if defined(__cplusplus)
-extern "C"
-{
+extern "C" {
 #endif /* defined(__cplusplus) */
 
 // 7.4.1 Character classification functions

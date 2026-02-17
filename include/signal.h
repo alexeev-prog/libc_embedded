@@ -29,8 +29,7 @@
 #include <types/sig_atomic_t.h>
 
 #if defined(__cplusplus)
-extern "C"
-{
+extern "C" {
 #endif /* defined(__cplusplus) */
 
 // 7.14.1 Specify signal handling

@@ -29,8 +29,7 @@
 #include <types/fexcept_t.h>
 
 #if defined(__cplusplus)
-extern "C"
-{
+extern "C" {
 #endif /* defined(__cplusplus) */
 
 // 7.6.2 Floating-point exceptions
